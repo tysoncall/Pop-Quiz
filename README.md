@@ -1,1 +1,1 @@
-Let
+Quiz using basic html, js and css. Play for your chance to win a million dollars!!!
