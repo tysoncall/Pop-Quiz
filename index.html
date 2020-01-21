@@ -1,38 +1,49 @@
+  
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Pop Quiz</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>Code Quiz</title>
 </head>
+
 <body>
-    <div class="grid">
-        <div id="quiz">
-            <h1>Tyson's Pop Quiz</h1>
-            <hr style="margin-bottom: 20px">
-
-            <p id="question"></p>
-
-            <div class="buttons">
-                <button id="btn0"><span id="choice0"></span></button>
-                <button id="btn1"><span id="choice1"></span></button>
-                <button id="btn2"><span id="choice2"></span></button>
-                <button id="btn3"><span id="choice3"></span></button>
+    <div class="quizContainer container-fluid well well-lg">
+        <div class="container card">
+            <div id="quiz" class="text-center">
+                <div class="card-header">
+                    <h2>Coding Quiz</h2>
+                </div>
+                <div class="card-body">
+                    <p id="instructions">Timed quiz to see how smart you really are!</p>
+                    <h4 class="iTime">Time Remaining: 0</h4>
+                    <hr>
+                    <button type="button" class="btnColor btn btn-secondary" id="start">Start Quiz</button>
+                    <button type="button" class="btn btn-secondary" id="viewScores" onclick="viewAllScores()">View High
+                        Scores</button>
+                    <main class="questions-rendered"></main>
+                    <p id="choice-response"></p>
+                </div>
+                <div id="initialsDiv" class="text-center" style="display:none">
+                    Enter Initials: <input type="text" onfocus="this.value=''" id="myInitials" value="">
+                    <button type="button" class="btnColor btn btn-secondary" id="enterInitials"
+                        onclick="getInitials()">Submit</button>
+                </div>
+                <div id="scoresDiv" class="text-center" style="display:none">
+                    <button type="button" class="btn btn-info" id="goBack" onclick="startOver()">Go Back</button>
+                    <button type="button" class="btn btn-info" id="clearScores" onclick="clearScores()">Clear High
+                        Scores</button>
+                </div>
             </div>
-
-            <hr style="margin-top: 50px">
-
-            <footer>
-                <p id="progress">Questions x of y.</p>
-            </footer>
         </div>
     </div>
-
-    
-    <script src="quiz-controller.js"></script>
-    <script src="question.js"></script>
-    <script src="app.js"></script>
 </body>
+<script src="questions.js"></script>
+<script src="quiz.js"></script>
+
 </html>
